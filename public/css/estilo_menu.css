@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(/img/Fondo_Login.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+  }
+
+h1{
+    font-size: 50px;
+    color:rgb(185, 198, 230);
+    width: auto;
+    text-align: center;
+  
+}
+
+
+.conttitulo{
+    width: 100%;
+    background-image: url("../img/fondo-secundario.jpg");
+    height: 150px;
+}
+
+
+
+
+.menu{
+    float: left;
+    word-spacing: 20px;
+    margin-left:33%;
+    font-size: 24px;  
+}
+
+li{
+    display: inline;
+    margin: 5px;
+    
+}
+a{
+    color: white;
+   
+    text-decoration: none;
+    
+    
+}
+
+#nombre{
+    color: rgb(255, 255, 255);
+    float: right;
+    margin-right: 2%;
+    margin-top: -5%;
+    font-size: 25px;
+    word-spacing: 12px;
+}
+
+

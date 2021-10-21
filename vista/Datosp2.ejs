@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Personales</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/eliminarper.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+    
+</head>
+<body>
+    <h1>Datos del Vendedor</h1>
+    <table class="registros">
+      <thead>
+          <tr> 
+
+            
+
+              <th>Telefono</th>
+              
+
+              
+
+                 
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+          <input type="hidden" value="<%=datos.datid%>" name="datid" id="datid" class="datid" readonly>
+
+          <td><input type="text" value="<%=datos.datelefono%>" name="datelefono" id="datelefono" class="datelefono"></td>
+          
+
+          
+        
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

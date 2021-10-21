@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarusu.js"></script>
+    <script src="./js/eliminarusu.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+    
+</head>
+<body>
+   <div class="form-register">
+    <form action="/insertarusuarios" method="POST" >
+      <h4>Formulario Para Usuarios</h4>
+      <label for="username">Id de usuario</label>
+      <input class="controls" type="number" name="usuid" id="nombres" placeholder="Documento ">
+      <label for="username">Nombre de Usuario</label>
+      <input class="controls" type="text" name="usuario" id="apellidos" placeholder="Usuario">
+      <label for="username">Contraseña</label>
+      <input class="controls" type="password" name="clave" id="correo" placeholder="Clave">
+    
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <button class="button" type="submit">Registrar</button> 
+    </form>
+   </div>
+    <br>
+    <br>
+    <table class="registros">
+      <thead>
+          <tr> 
+              <th>Id de Usuario</th>
+              <th>Usuario</th>
+              <th>Clave</th>
+
+              <th>Actualizar</th>
+              <th>Eliminar</th>        
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+          <td><input type="text" value="<%=datos.usuid%>" name="usuid" id="usuid" class="usuid" readonly></td>
+          <td><input type="text" value="<%=datos.usuario%>" name="usuario" id="usuario" class="usuario"></td>
+          <td><input type="text" value="<%=datos.clave%>" name="clave" id="clave" class="clave"></td>
+
+          <td><input type="submit" value="Actualizar" name="btnact" id="btnact" class="btnact"></td>
+          <td><input type="submit" value="Eliminar" name="btneli" id="btneli" class="btneli"></td>
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

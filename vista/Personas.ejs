@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Personas</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/eliminarper.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+    
+</head>
+<body>
+   <div class="form-register">
+    <form action="/insertarpersonas" method="POST" >
+      <h4>Formulario Para Personas</h4>
+      <label for="username">ID</label>
+      <input class="controls" type="number" name="datid" class="datid" id="datid"  placeholder="ID">
+      <label for="username">ID Usuario</label>
+      <input class="controls" type="text" name="usuid"  placeholder="ID Usuario">
+      <label for="username">Nombres</label>
+      <input class="controls" type="text" name="datnombre"  placeholder="Nombres">
+      <label for="username">Apellidos</label>
+      <input class="controls" type="text" name="datapellido"  placeholder="Apellidos">
+      <label for="username">Tipo Identificacion</label>
+      <input class="controls" type="text" name="datipoid"  placeholder="Tipo de Identificacion">
+      <label for="username">Numero de Identificacion</label>
+      <input class="controls" type="text" name="datnumeroid"  placeholder="Numero de Identificacion">
+      <label for="username">Telefono</label>
+      <input class="controls" type="text" name="datelefono"  placeholder="Telefono">
+      <label for="username">Correo</label>
+      <input class="controls" type="text" name="datcorreo"  placeholder="Correo">
+    
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <button class="button" type="submit">Registrar</button> 
+    </form>
+   </div>
+    <br>
+    <br>
+    <table class="registros">
+      <thead>
+          <tr> 
+              <th>Id </th>
+              <th>Id de Usuario</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Tipo Identificacion</th>
+              <th>Numero de Identificacion</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+
+              
+
+              <th>Eliminar</th>        
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+          <td><input type="text" value="<%=datos.datid%>" name="datid" id="datid" class="datid" readonly></td>
+          <td><input type="text" value="<%=datos.usuid%>" name="usuid" id="usuid" class="usuid" readonly></td>
+          <td><input type="text" value="<%=datos.datnombre%>" name="datnombre" id="datnombre" class="datnombre"></td>
+          <td><input type="text" value="<%=datos.datapellido%>" name="datapellido" id="datapellido" class="datapellido"></td>
+          <td><input type="text" value="<%=datos.datipoid%>" name="datipoid" id="datipoid" class="datipoid" readonly></td>
+          <td><input type="text" value="<%=datos.datnumeroid%>" name="datnumeroid" id="datnumeroid" class="datnumeroid" readonly></td>
+          <td><input type="text" value="<%=datos.datelefono%>" name="datelefono" id="datelefono" class="datelefono"></td>
+          <td><input type="text" value="<%=datos.datcorreo%>" name="datcorreo" id="datcorreo" class="datcorreo"></td>
+
+          
+          <td><input type="submit" value="Eliminar" name="btneli" id="btneli" class="btneli"></td>
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

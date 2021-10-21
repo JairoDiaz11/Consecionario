@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vehiculo</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+    
+    
+</head>
+<body>
+   <div class="form-register">
+    <form action="/insertarvehiculo" method="POST" >
+      <h4>Formulario Para Registrar un nuevo Vehiculo</h4>
+      <label for="username">PLaca del Vehiculo</label>
+      <input class="controls" type="text" name="vehplaca"  placeholder="ID">
+      <label for="username">ID</label>
+      <input class="controls" type="text" name="datid"  placeholder="SU ID">
+      <label for="username">Id de Categoria</label>
+      <input class="controls" type="text" name="catid"  placeholder="1-Automovil 2-Camioneta 3-Campero 4-Deportivo 5-Camion">
+      <label for="username">Modelo</label>
+      <input class="controls" type="text" name="vehmodelo"  placeholder="Modelos">
+      <label for="username">Marca</label>
+      <input class="controls" type="text" name="vehmarca"  placeholder="Marca">
+      <label for="username">Color</label>
+      <input class="controls" type="text" name="color"  placeholder="Color">
+      <label for="username">Estado</label>
+      <input class="controls" type="text" name="vehestado"  placeholder="Estado">
+      <label for="username">Precio</label>
+      <input class="controls" type="text" name="vehprecio"  placeholder="Precio">
+    
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <button class="button" type="submit">Registrar</button> 
+    </form>
+   </div>
+    <br>
+    <br>
+    <h1>Mis Registros de Automoviles</h1>
+    <table class="registros">
+      <thead>
+          <tr> 
+              <th>PLaca </th>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Color</th>
+              <th>Estado</th>
+              <th>Precio</th>
+
+
+              
+
+              <th>Eliminar</th>        
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+          <td><input type="text" value="<%=datos.vehplaca%>" name="vehplaca" id="vehplaca" class="vehplaca" readonly></td>
+          <input type="hidden" value="<%=datos.datid%>" name="datid" id="datid" class="datid" readonly>
+          <input type="hidden" value="<%=datos.catid%>" name="catid" id="catid" class="catid">
+          <td><input type="text" value="<%=datos.vehmodelo%>" name="vehmodelo" id="vehmodelo" class="vehmodelo"></td>
+          <td><input type="text" value="<%=datos.vehmarca%>" name="vehmarca" id="vehmarca" class="vehmarca" readonly></td>
+          <td><input type="text" value="<%=datos.color%>" name="color" id="color" class="color" readonly></td>
+          <td><input type="text" value="<%=datos.vehestado%>" name="vehestado" id="vehestado" class="vehestado"></td>
+          <td><input type="text" value="<%=datos.vehprecio%>" name="vehprecio" id="vehprecio" class="vehprecio"></td>
+
+          
+          <td><input type="submit" value="Eliminar" name="btneli" id="btneli" class="btneli"></td>
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

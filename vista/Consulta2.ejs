@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Vehiculo</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+    
+    
+</head>
+<body>
+   
+    <table class="registros">
+      <thead>
+          <tr> 
+              
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Color</th>
+              <th>Estado</th>
+              <th>Precio</th>
+
+
+              
+
+              <th>Numero del Vendedor</th>        
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+          <form action="/datosvendedor2" method="POST" >
+            <input type="hidden" value="<%=datos.datid%>" name="datid" id="datid" class="datid" readonly>
+            <input type="hidden" value="<%=datos.catid%>" name="catid" id="catid" class="catid">
+            <td><input type="text" value="<%=datos.vehmodelo%>" name="vehmodelo" id="vehmodelo" class="vehmodelo"></td>
+            <td><input type="text" value="<%=datos.vehmarca%>" name="vehmarca" id="vehmarca" class="vehmarca" readonly></td>
+            <td><input type="text" value="<%=datos.color%>" name="color" id="color" class="color" readonly></td>
+            <td><input type="text" value="<%=datos.vehestado%>" name="vehestado" id="vehestado" class="vehestado"></td>
+            <td><input type="text" value="<%=datos.vehprecio%>" name="vehprecio" id="vehprecio" class="vehprecio"></td>
+  
+            
+            <td><input type="submit" value="Numero del Vendedor"></td>
+
+          </form>
+         
+
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

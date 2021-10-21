@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Datos</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actdatos.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+</head>
+<body>
+    <h1>Actualizar mis Datos</h1>
+
+    <table class="registros">
+      <thead>
+          <tr> 
+
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+
+              
+
+              <th>Actualizar</th>        
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+         <input type="hidden" value="<%=datos.datid%>" name="datid" id="datid" class="datid" readonly>
+          <td><input type="text" value="<%=datos.datnombre%>" name="datnombre" id="datnombre" class="datnombre"></td>
+          <td><input type="text" value="<%=datos.datapellido%>" name="datapellido" id="datapellido" class="datapellido"></td>
+          <td><input type="text" value="<%=datos.datelefono%>" name="datelefono" id="datelefono" class="datelefono"></td>
+          <td><input type="text" value="<%=datos.datcorreo%>" name="datcorreo" id="datcorreo" class="datcorreo"></td>
+
+          
+          <td><input type="submit" value="Actualizar" name="btnact" id="btnact" class="btnact"></td>
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

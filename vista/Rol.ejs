@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Roles</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarusu.js"></script>
+    <script src="./js/eliminarusu.js"></script>
+    <link rel="stylesheet" href="./css/estilo_formularios.css">
+    
+</head>
+<body>
+   <div class="form-register">
+    <form action="/insertarroles" method="POST" >
+      <h4>Formulario Para Roles</h4>
+
+      <label for="username">Tipo de Rol</label>
+      <input class="controls" type="number" name="rolid" id="rolid" placeholder="1-Comprador,2-Vendedor,3-Admin">
+
+      <label for="username">Id de usuario</label>
+      <input class="controls" type="number" name="usuid" id="rolid" placeholder="Documento ">
+
+    
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <button class="button" type="submit">Registrar</button> 
+    </form>
+   </div>
+    <br>
+    <br>
+    <table class="registros">
+      <thead>
+          <tr> 
+              <th>Tipo de Rol</th>
+              <th>Id de Usuario</th>
+              
+      
+          </tr>
+      </thead>
+      <tbody>
+          <% datos.forEach(function (datos){ %>
+      <tr>
+        
+          <td><input type="text" value="<%=datos.rolid%>" name="rolid" id="rolid" class="rolid" readonly></td>
+          <td><input type="text" value="<%=datos.usuid%>" name="usuid" id="usuid" class="usuid" readonly></td>
+          
+
+
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>
